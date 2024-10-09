@@ -14,6 +14,7 @@
       src="https://kit.fontawesome.com/6420d9e702.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="index.css" />
     <style>
       /* Spinner styles */
       #spinner {
@@ -110,12 +111,19 @@
             </p>
           </div>
           <div>
-            <button class="btn bg-teal-800 text-white">Sort by Price</button>
+            <button
+              onclick="shortByPrice()"
+              id="sortPriceButton"
+              class="btn bg-teal-800 text-white"
+            >
+              Sort by Price
+            </button>
           </div>
         </div>
       </section>
       <!-- Pictures -->
       <div id="spinner"></div>
+
       <section class="my-5 grid md:grid-cols-2 lg:grid-cols-4 gap-3">
         <div
           id="pets"
@@ -133,7 +141,28 @@
         </div>
       </section>
       <!-- Button section ends -->
+      <!-- modal -->
+      <div id="countModal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+        <div class="flex items-center justify-center h-full space-y-3">
+          <div class="bg-white p-10 rounded-lg shadow-lg">
+            <div class="mx-auto flex justify-center w-[140px]">
+              <img src="images/handshake.jpg" alt="" />
+            </div>
+            <p class="text-first text-[24px] text-center font-extrabold">
+              Congrates
+            </p>
+            <p class="text-first text-center py-2">
+              Adoption Process is Start For your Pet
+            </p>
+
+            <p id="countdown" class="text-center text-5xl font-bold">3</p>
+          </div>
+        </div>
+      </div>
+      <!-- modal ends-->
+      <div id="modal-container"></div>
     </main>
+
     <footer
       class="footer bg-black text-white rounded-2xl p-10 mt-9 lg:flex justify-between items-center"
     >
@@ -170,5 +199,6 @@
       </nav>
     </footer>
     <script src="index.js"></script>
+    <script src="shortByPrice.js"></script>
   </body>
 </html>
